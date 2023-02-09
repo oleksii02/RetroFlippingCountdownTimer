@@ -10,13 +10,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
     <script>
         $(document).ready(function() {
+            let newDate = Date()
+            newDate = [...newDate.split(' ').splice(1,4)]
+            newDate[1] = Number(newDate[1]) + 1
+
             $('.flipTimer').flipTimer({
+
 
 // count up or countdown
                 direction: 'down',
 
+
 // the target <a href="https://www.jqueryscript.net/time-clock/">date</a>
-                date: 'December 14, 2025 21:36:00',
+                date: newDate,
 
 // callback works only with direction = "down"
                 callback: function() { alert('times up!'); }
